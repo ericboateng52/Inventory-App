@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css" integrity="sha512-9nqhm3FWfB00id4NJpxK/wV1g9P2QfSsEPhSSpT+6qrESP6mpYbTfpC+Jvwe2XY27K5mLwwrqYuzqMGK5yC9/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+       <!-- Sidebar -->
+        <div class="sidebar">
+                <div class="logo_content">
+                    <div class="logo">
+                        <i class='bx bxl-c-plus-plus'></i>
+                        <div class="logo_name">CodingLab</div>
+                    </div>
+                    <i class='bx bx-menu' id="btn" onclick="active()"></i>
+                </div>
+                <ul class="nav_list">
+                    <li>
+                            <i class='bx bx-search' onclick="active()" ></i>
+                            <input type="seachbox" placeholder="Search">
+                            <span class="tooltip">Search Box</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-grid-alt' ></i>
+                            <span class="links_name">Dashboard</span>
+                        </a>
+                            <span class="tooltip">Dashboard</span>
+                    </li>
+                    <li>
+                        <a href="./html/user.html">
+                            <i class='bx bx-user'></i>
+                            <span class="links_name">User</span>
+                        </a>
+                            <span class="tooltip">User</span>
+                    </li>
+                    <li>
+                        <a href="./html/messages.html">
+                            <i class='bx bx-chat' ></i>
+                            <span class="links_name">Inbound Request</span> 
+                        </a>
+                            <span class="tooltip">Inbound Request</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt-2'></i>
+                            <span class="links_name">Outbound Request</span>
+                        </a>
+                            <span class="tooltip">Outbound Request</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-box'></i>
+                            <span class="links_name">Inventory</span>
+                        </a>
+                            <span class="tooltip">Inventory</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-cart-alt'></i>
+                            <span class="links_name">Documentaion</span>
+                        </a>
+                            <span class="tooltip">Documentaion</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-heart'></i>
+                            <span class="links_name">Saved</span>
+                        </a>
+                            <span class="tooltip">Saved</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-cog'></i>
+                            <span class="links_name">Settings</span>
+                        </a>
+                            <span class="tooltip">Settings</span>
+                    </li>
+                    
+                </ul>
+                <div class="profile_content">
+                    <div class="profile">
+                        <div class="profile_detail">
+                            <img src="img/me.jpg" alt="myImage">
+                            <div class="name_job">
+                                <div class="name">Eric G.Sarpong Boateng</div>
+                                <div class="job">Software Engeneer</div>
+                            </div>
+                        </div>
+                        <i class='bx bx-log-out' id="log_out" onclick="logout_home()"></i>
+                    </div>
+                </div>
+        </div>
+        <!--Main page-->
+        <div class="home_content">
+                <div class="header">
+                    <div class="header_text">Dashboard</div>
+                </div>
+                <div class="home_content_body">
+                    <div class="header-row">
+                        <div class="data-box">
+                            <div class="data-icon" style="background: #14a2b8;">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                            </div>
+                            <div class="data-text">
+                                <div class="data-text-header">
+                                    Total Inventory
+                                </div>
+                                <div class="data-text-body">
+                                    GHC 1,500
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-box">
+                            <div class="data-icon" style="background: #dc3444;">
+                                <i class="fa-solid fa-truck-arrow-right"></i>
+                            </div>
+                            <div class="data-text">
+                                <div class="data-text-header">
+                                    Inbound Requests
+                                </div>
+                                <div class="data-text-body">
+                                    200
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-box">
+                            <div class="data-icon" style="background: #28a745;">
+                                <i class="fa-solid fa-truck-arrow-right"></i>
+                            </div>
+                            <div class="data-text">
+                                <div class="data-text-header">
+                                    Outbound Request
+                                </div>
+                                <div class="data-text-body">
+                                    500
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-box">
+                            <div class="data-icon" style="background: #ffc007;">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                            </div>
+                            <div class="data-text">
+                                <div class="data-text-header">
+                                    Expiry Products
+                                </div>
+                                <div class="data-text-body">
+                                    2,500
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart_area">
+                            <div class="graph_1">
+                                <div class="graph_label">
+                                    <h2>Outbound vs Inbound Trends</h2>
+                                </div>
+                                <img src="./img/graph.png" alt="">
+                            </div>
+                            <div class="graph_2">
+                                <div class="graph_label">
+                                    <h2>Inbound vs Expiry Trends</h2>
+                                </div>
+                                <img src="./img/graph.png" alt="">
+                            </div>
+                            <div class="bottom-row">
+                                <div class="col">
+                                    <div class="col-inner">
+                                        <div class="text-row1">10%</div>
+                                        <div class="text-row2">GHC 2,000,000.00</div>
+                                        <div class="text-row3">Total Inventory</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col-inner">
+                                        <div class="text-row1">40%</div>
+                                        <div class="text-row2">GHC 150,000.00</div>
+                                        <div class="text-row3">Total Inbound</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col-inner">
+                                        <div class="text-row1">4%</div>
+                                        <div class="text-row2">GHC 2,500,555.00</div>
+                                        <div class="text-row3">Total Outbound</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col-inner">
+                                        <div class="text-row1">10%</div>
+                                        <div class="text-row2">GHC 4,500,000.00</div>
+                                        <div class="text-row3">Total Expiry</div>
+                                    </div>
+                                </div>
+                            </div>
+                     </div> 
+                     <div class="section2"> 
+                        <div class="orders">
+                           <div class="section-header">
+                                <h3>Recent Orders</h3>
+                           </div>
+                           <div class="section-body">
+                            <div class="section-body-head">
+                                <div class="col1 ">Date</div>
+                                <div class="col2">Order ID</div>
+                                <div class="col3">Facility</div>
+                                <div class="col4 ">Status</div>
+                            </div>
+                            <div class="body-table">
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="col1 ">2021-07-22</div>
+                                    <div class="col2"><a href="#">LR00122</a></div>
+                                    <div class="col3">Synlab-kumasi</div>
+                                    <div class="col4 ">Shipped</div>
+                                </div>
+                            </div>
+                           </div>
+                           <div class="footer">
+                            <div class="order_btn">
+                                <a href="./html/user.html"><button >Place New Order</button></a>
+                            </div>
+                            <div class="view_allbtn">
+                                <a href="./html/user.html"><button >View All Orders</button></a>
+                            </div>
+                           </div>
+                        </div>
+                        <div class="products">
+                            <div class="section-header">
+                                <h3>Recently Added Products</h3>
+                           </div>
+                           <div class="section-body">
+                                <div class="section-body-head">
+                                    <div class="p-col1">Date</div>
+                                    <div class="p-col2">PO Number</div>
+                                    <div class="p-col3">Supplier</div>
+                                    <div class="p-col4">Status</div>
+                                </div>
+                                <div class="body-table">
+                                    <div class="p-table-row">
+                                        <div class="p-col1 ">2021-07-22</div>
+                                        <div class="p-col2"><a href="#">LR00122</a></div>
+                                        <div class="p-col3">Synlab-kumasi</div>
+                                        <div class="p-col4 ">Shipped</div>
+                                    </div>
+                                    <div class="p-table-row">
+                                        <div class="p-col1 ">2021-07-22</div>
+                                        <div class="p-col2"><a href="#">LR00122</a></div>
+                                        <div class="p-col3">Synlab-kumasi</div>
+                                        <div class="p-col4 ">Shipped</div>
+                                    </div>
+                                    <div class="p-table-row">
+                                        <div class="p-col1 ">2021-07-22</div>
+                                        <div class="p-col2"><a href="#">LR00122</a></div>
+                                        <div class="p-col3">Synlab-kumasi</div>
+                                        <div class="p-col4 ">Shipped</div>
+                                    </div>
+                                    <div class="p-table-row">
+                                        <div class="p-col1 ">2021-07-22</div>
+                                        <div class="p-col2"><a href="#">LR00122</a></div>
+                                        <div class="p-col3">Synlab-kumasi</div>
+                                        <div class="p-col4 ">Shipped</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-footer">
+                                <div class="p-view_allbtn">
+                                    <a href="./html/user.html">View All Products</a>
+                                </div>
+                               </div>    
+                        </div>
+                    </div>
+                </div>                
+        </div>    
+</body>
+<script src="./javascript/main.js" defer></script>
+</html>

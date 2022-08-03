@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="login_main">
+        <div class="main">
+            <div class="left_panel">
+            </div>
+            <div class="right_panel">
+                <div class="form">
+                    <div class="header_text">
+                        <h3>Welcome back</h3>
+                        login to continue
+                    </div>
+                    <div class="login_form">
+                        <form  method="Get">
+                            <input type="text" id="user_name" placeholder="Enter Your Username">
+                            <input type="password" id="password" placeholder="Enter Password">
+                            <input type="checkbox" class="check_box"><span>Remember me</span>
+                            <button class="submit_button" id="submit_buttton" onclick="validate()">Submit</button>
+                            <div class="reset_password">forgot password? click <a href="#">here</a></div>
+                        </form>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>    
+</body>
+<script >
+    let userName = document.getElementById("user_name").value;
+    let passWord =  document.getElementById("password").value;
+    let submit = document .getElementById("submit_button")
+
+     function validate(){
+            if(userName=="snow" && passWord=="admin1"){
+            alert("login successful")
+            window.location.href = "../index.html"
+        }
+
+    }
+</script>
+</html>
